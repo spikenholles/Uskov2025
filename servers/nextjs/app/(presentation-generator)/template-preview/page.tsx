@@ -95,9 +95,9 @@ const LayoutPreview = () => {
       <div className=" sticky top-0 z-30">
         <div className="max-w-7xl mx-auto border-b px-6 py-6">
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-gray-900">All Templates</h1>
+            <h1 className="text-3xl font-bold text-gray-900">Все шаблоны</h1>
             <p className="text-gray-600 mt-2">
-              {layoutGroups.length} templates
+              {layoutGroups.length} шаблонов
             </p>
           </div>
         </div>
