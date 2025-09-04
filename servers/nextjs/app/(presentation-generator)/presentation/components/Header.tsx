@@ -167,7 +167,7 @@ const Header = ({
         variant="ghost"
         className={`pb-4 border-b rounded-none border-gray-300 w-full flex justify-start text-[#5146E5] ${mobile ? "bg-white py-6 border-none rounded-lg" : ""}`} >
         <Image src={PDFIMAGE} alt="pdf export" width={30} height={30} />
-        Export as PDF
+        Экспорт в PDF
       </Button>
       <Button
         onClick={() => {
@@ -178,7 +178,7 @@ const Header = ({
         className={`w-full flex justify-start text-[#5146E5] ${mobile ? "bg-white py-6" : ""}`}
       >
         <Image src={PPTXIMAGE} alt="pptx export" width={30} height={30} />
-        Export as PPTX
+        Экспорт в PPTX
       </Button>
 
 
