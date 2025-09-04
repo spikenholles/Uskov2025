@@ -4,11 +4,11 @@ import React, { useState, useEffect } from 'react';
 const LoadingState = () => {
     const [currentTipIndex, setCurrentTipIndex] = useState(0);
     const tips = [
-        "We're crafting your presentation with AI magic ✨",
-        "Analyzing your content for perfect slides 📊",
-        "Organizing information for maximum impact 🎯",
-        "Adding visual elements to engage your audience 🎨",
-        "Almost there! Putting final touches ⚡️"
+        "Создаем вашу презентацию с помощью магии ИИ ✨",
+        "Анализируем ваш контент для идеальных слайдов 📊", 
+        "Организуем информацию для максимального воздействия 🎯",
+        "Добавляем визуальные элементы для привлечения аудитории 🎨",
+        "Почти готово! Наносим финальные штрихи ⚡️"
     ];
 
     useEffect(() => {

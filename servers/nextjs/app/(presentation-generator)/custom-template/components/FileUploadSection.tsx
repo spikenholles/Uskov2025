@@ -67,7 +67,7 @@ export const FileUploadSection: React.FC<FileUploadSectionProps> = ({
               />
             </Label>
             <p className="text-sm text-gray-500 mt-2">
-              Drag and drop your file here or click to browse
+              Перетащите файл сюда или нажмите для поиска на компьютере
             </p>
           </div>
         ) : (

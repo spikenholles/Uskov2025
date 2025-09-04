@@ -27,20 +27,20 @@ export const usePresentationGeneration = (
   const validateInputs = useCallback(() => {
     if (!outlines || outlines.length === 0) {
       toast.error("No Outlines", {
-        description: "Please wait for outlines to load before generating presentation",
+        description: "Пожалуйста, подождите загрузки плана презентации прежде чем начать генерацию",
       });
       return false;
     }
 
     if (!selectedLayoutGroup) {
       toast.error("Select Layout Group", {
-        description: "Please select a layout group before generating presentation",
+        description: "Пожалуйста, выберите группу макетов перед генерацией презентации",
       });
       return false;
     }
     if (!selectedLayoutGroup.slides.length) {
       toast.error("No Slide Schema found", {
-        description: "Please select a Group before generating presentation",
+        description: "Пожалуйста, выберите группу прежде чем начать генерацию",
       });
       return false;
     }
@@ -67,7 +67,7 @@ export const usePresentationGeneration = (
 
 
     setLoadingState({
-      message: "Generating presentation data...",
+      message: "Генерация данных презентации...",
       isLoading: true,
       showProgress: true,
       duration: 30,

@@ -100,14 +100,14 @@ const SlideCountSelect: React.FC<{
               placeholder="--"
               className="h-8 w-16 px-2 text-sm"
             />
-            <span className="text-sm font-medium">slides</span>
+            <span className="text-sm font-medium">слайдов</span>
           </div>
         </div>
 
         {/* Hidden item to allow SelectValue to render custom selection */}
         {value && !SLIDE_OPTIONS.includes(value as SlideOption) && (
           <SelectItem value={value} className="hidden">
-            {value} slides
+            {value} слайдов
           </SelectItem>
         )}
 
@@ -118,7 +118,7 @@ const SlideCountSelect: React.FC<{
             className="font-instrument_sans text-sm font-medium"
             role="option"
           >
-            {option} slides
+            {option} слайдов
           </SelectItem>
         ))}
       </SelectContent>
@@ -154,7 +154,7 @@ const LanguageSelect: React.FC<{
     <PopoverContent className="w-[300px] p-0" align="end">
       <Command>
         <CommandInput
-          placeholder="Search language..."
+          placeholder="Искать язык..."
           className="font-instrument_sans"
         />
         <CommandList>

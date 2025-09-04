@@ -105,7 +105,7 @@ const LayoutPreview = () => {
         {/* In Built Templates */}
         <section className="h-full pt-16 flex justify-center items-center">
           <div className="max-w-7xl mx-auto px-6 py-6 w-full">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">In Built Templates</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">Встроенные шаблоны</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {inBuiltGroups.map((group) => {
                 const isCustom = group.groupName.toLowerCase().startsWith("custom-");
@@ -172,7 +172,7 @@ const LayoutPreview = () => {
         <section className="h-full pt-8 pb-16 flex justify-center items-center">
           <div className="max-w-7xl mx-auto px-6 py-6 w-full">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-semibold text-gray-900">Custom AI Templates</h2>
+              <h2 className="text-xl font-semibold text-gray-900">Пользовательские шаблоны</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {customGroupsSorted.length > 0 ? (

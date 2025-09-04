@@ -8,92 +8,90 @@ import { HelpCircle, X, Search } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
 
 const helpQuestions = [
-  {
-    id: 1,
-    category: "Images",
-    question: "How do I change an image?",
-    answer:
-      "Click on any image to reveal the image toolbar. You'll see options to Edit, Adjust position, and change how the image fits within its container. The Edit option allows you to replace or modify the current image.",
-  },
-  {
-    id: 2,
-    category: "Images",
-    question: "Can I generate new images with AI?",
-    answer:
-      "Yes! Click on any image and select the Edit option from the toolbar. In the side panel that appears, you'll find the AI Generate tab. Enter your prompt describing the image you want, and our AI will generate an image based on your description.",
-  },
-  {
-    id: 3,
-    category: "Images",
-    question: "How do I upload my own images?",
-    answer:
-      "Click on any image, then select Edit from the toolbar. In the side panel, click on the Upload tab at the top. You can browse your files to select one. Once uploaded, you can apply it to your design.",
-  },
-  {
-    id: 11,
-    category: "AI Prompts",
-    question: "Can I change slide layout through prompt?",
-    answer:
-      "Yes you can! Click on the WandSparkles icon on the top left of each slide and it will give you a prompt input box. Describe your layout requirements and the AI will change the slide layout accordingly.",
-  },
-  {
-    id: 12,
-    category: "AI Prompts",
-    question: "Can I change slide image through prompt?",
-    answer:
-      "Yes you can! Click on the WandSparkles icon on the top left of each slide and it will give you a prompt input box. Describe the image you want and the AI will update the slide image based on your requirements.",
-  },
-
-  {
-    id: 14,
-    category: "AI Prompts",
-    question: "Can I change content through prompt?",
-    answer:
-      "Yes you can! Click on the WandSparkles icon on the top left of each slide and it will give you a prompt input box. Describe what content you want and the AI will update the slide's text and content based on your description.",
-  },
-  {
-    id: 4,
-    category: "Text",
-    question: "How can I format and highlight text?",
-    answer:
-      "Select any text to see the formatting toolbar appear. You'll have options for Bold, Italic, Underline, Strikethrough,and more.",
-  },
-  {
-    id: 5,
-    category: "Icons",
-    question: "How do I change icons?",
-    answer:
-      "Click on any existing icon to modify it. In the icon selector panel, you can browse icos or use the search function to find specific icons. We offer thousands of icons in various styles.",
-  },
-  {
-    id: 16,
-    category: "Layout",
-    question: "Can I change the position of slide?",
-    answer:
-      "Of course, On side panel you can drag the slide and place wherever you want.",
-  },
-  {
-    id: 15,
-    category: "Layout",
-    question: "Can I add new slide between the slide?",
-    answer:
-      "Yes you can just click on the plus icon below each slide.It will display the all the layouts and choose required one.",
-  },
-  {
-    id: 6,
-    category: "Layout",
-    question: "Can I add more sections to my slides?",
-    answer:
-      "Absolutely! Hover near the bottom of any text box or content block, and you'll see a + icon appear. Click this button to add a new section below the current one. You can also use the Insert menu to add specific section types.",
-  },
-
-  {
-    id: 8,
-    category: "Export",
-    question: "How do I download or export my presentation?",
-    answer:
-      "Click the Export button in the top right menu. You can choose to download as PDF, PowerPoint.",
-  },
+ {
+   id: 1,
+   category: "Изображения",
+   question: "Как изменить изображение?",
+   answer:
+     "Нажмите на любое изображение, чтобы открыть панель инструментов. Вы увидите опции для редактирования, настройки позиции и изменения способа размещения изображения в контейнере. Опция 'Редактировать' позволяет заменить или изменить текущее изображение.",
+ },
+ {
+   id: 2,
+   category: "Изображения",
+   question: "Могу ли я генерировать новые изображения с помощью ИИ?",
+   answer:
+     "Да! Нажмите на любое изображение и выберите опцию 'Редактировать' в панели инструментов. В появившейся боковой панели найдите вкладку 'ИИ Генерация'. Введите описание желаемого изображения, и наш ИИ создаст изображение на основе вашего описания.",
+ },
+ {
+   id: 3,
+   category: "Изображения",
+   question: "Как загрузить собственные изображения?",
+   answer:
+     "Нажмите на любое изображение, затем выберите 'Редактировать' в панели инструментов. В боковой панели нажмите на вкладку 'Загрузить' вверху. Вы можете выбрать файл из своих документов. После загрузки вы сможете применить его к вашему дизайну.",
+ },
+ {
+   id: 11,
+   category: "ИИ Промпты",
+   question: "Могу ли я изменить макет слайда через промпт?",
+   answer:
+     "Да, можете! Нажмите на иконку волшебной палочки в левом верхнем углу каждого слайда, и появится поле для ввода промпта. Опишите требования к макету, и ИИ изменит макет слайда соответственно.",
+ },
+ {
+   id: 12,
+   category: "ИИ Промпты",
+   question: "Могу ли я изменить изображение слайда через промпт?",
+   answer:
+     "Да, можете! Нажмите на иконку волшебной палочки в левом верхнем углу каждого слайда, и появится поле для ввода промпта. Опишите желаемое изображение, и ИИ обновит изображение слайда согласно вашим требованиям.",
+ },
+ {
+   id: 14,
+   category: "ИИ Промпты",
+   question: "Могу ли я изменить контент через промпт?",
+   answer:
+     "Да, можете! Нажмите на иконку волшебной палочки в левом верхнем углу каждого слайда, и появится поле для ввода промпта. Опишите желаемый контент, и ИИ обновит текст и содержимое слайда на основе вашего описания.",
+ },
+ {
+   id: 4,
+   category: "Текст",
+   question: "Как форматировать и выделять текст?",
+   answer:
+     "Выделите любой текст, чтобы появилась панель форматирования. У вас будут опции для жирного текста, курсива, подчеркивания, зачеркивания и многое другое.",
+ },
+ {
+   id: 5,
+   category: "Иконки",
+   question: "Как изменить иконки?",
+   answer:
+     "Нажмите на любую существующую иконку, чтобы изменить её. В панели выбора иконок вы можете просматривать иконки или использовать поиск для нахождения конкретных иконок. Мы предлагаем тысячи иконок в различных стилях.",
+ },
+ {
+   id: 16,
+   category: "Макет",
+   question: "Могу ли я изменить позицию слайда?",
+   answer:
+     "Конечно, в боковой панели вы можете перетащить слайд и разместить его где угодно.",
+ },
+ {
+   id: 15,
+   category: "Макет",
+   question: "Могу ли я добавить новый слайд между существующими слайдами?",
+   answer:
+     "Да, просто нажмите на иконку плюса под каждым слайдом. Отобразятся все макеты, и вы сможете выбрать нужный.",
+ },
+ {
+   id: 6,
+   category: "Макет",
+   question: "Могу ли я добавить больше секций к моим слайдам?",
+   answer:
+     "Конечно! Наведите курсор на нижнюю часть любого текстового блока или блока контента, и появится иконка +. Нажмите эту кнопку, чтобы добавить новую секцию ниже текущей. Вы также можете использовать меню 'Вставить' для добавления определенных типов секций.",
+ },
+ {
+   id: 8,
+   category: "Экспорт",
+   question: "Как скачать или экспортировать мою презентацию?",
+   answer:
+     "Нажмите кнопку 'Экспорт' в верхнем правом меню. Вы можете выбрать скачивание в формате PDF или PowerPoint.",
+ },
 ];
 
 const Help = () => {
@@ -101,7 +99,7 @@ const Help = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredQuestions, setFilteredQuestions] = useState(helpQuestions);
   const [categories, setCategories] = useState<string[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("Все");
   const modalRef = useRef<HTMLDivElement>(null);
 
   // Extract unique categories and create "All" category list
@@ -109,7 +107,7 @@ const Help = () => {
     const uniqueCategories = Array.from(
       new Set(helpQuestions.map((q) => q.category))
     );
-    setCategories(["All", ...uniqueCategories]);
+    setCategories(["Все", ...uniqueCategories]);
   }, []);
 
   // Filter questions based on search query and selected category
@@ -117,7 +115,7 @@ const Help = () => {
     let results = helpQuestions;
 
     // Filter by category if not "All"
-    if (selectedCategory !== "All") {
+    if (selectedCategory !== "Все") {
       results = results.filter((q) => q.category === selectedCategory);
     }
 
@@ -187,7 +185,7 @@ const Help = () => {
         <div className="bg-white rounded-lg shadow-2xl border border-gray-200 overflow-hidden">
           {/* Header */}
           <div className="bg-emerald-600 text-white px-6 py-4 flex justify-between items-center">
-            <h2 className="text-lg font-medium">Help Center</h2>
+            <h2 className="text-lg font-medium">Помощь</h2>
             <button
               onClick={() => setIsOpen(false)}
               className="hover:bg-emerald-700 p-1 rounded"
@@ -201,7 +199,7 @@ const Help = () => {
             <div className="relative">
               <input
                 type="text"
-                placeholder="Search help topics..."
+                placeholder="Искать..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
@@ -260,7 +258,7 @@ const Help = () => {
                 <button
                   onClick={() => {
                     setSearchQuery("");
-                    setSelectedCategory("All");
+                    setSelectedCategory("Все");
                   }}
                   className="mt-2 text-emerald-600 hover:underline text-sm"
                 >
@@ -272,9 +270,9 @@ const Help = () => {
 
           {/* Footer */}
           <div className="bg-gray-50 px-6 py-3 border-t border-gray-200 text-xs text-gray-500 text-center">
-            Still need help?{" "}
+            Все еще нужна помощь?{" "}
             <a href="/contact" className="text-emerald-600 hover:underline">
-              Contact Support
+              Обратиться в поддержку
             </a>
           </div>
         </div>

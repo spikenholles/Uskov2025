@@ -151,11 +151,11 @@ export const EditControls: React.FC<EditControlsProps> = ({
               className="flex flex-col w-28 font-inter font-semibold items-center gap-1 h-full bg-green-600 hover:bg-green-700 px-4"
             >
               {isUpdating ? (
-                "Updating..."
+                "Обновление..."
               ) : (
                 <>
                   <SendHorizontal size={14} />
-                  Update
+                  Обновить
                 </>
               )}
             </Button>

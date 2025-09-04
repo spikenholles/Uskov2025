@@ -158,7 +158,7 @@ const SlideContent = ({ slide, index, presentationId }: SlideContentProps) => {
 
           {!showNewSlideSelection && (
             <div className="group-hover:opacity-100 hidden md:block opacity-0 transition-opacity my-4 duration-300">
-              <ToolTip content="Add new slide below">
+              <ToolTip content="Добавить новый слайд ниже">
                 {!isStreaming && !loading && (
                   <div
                     onClick={() => {
@@ -183,7 +183,7 @@ const SlideContent = ({ slide, index, presentationId }: SlideContentProps) => {
           )}
          
           {!isStreaming && !loading && (
-            <ToolTip content="Delete slide">
+            <ToolTip content="Удалить слайд">
               <div
                 onClick={() => {
                   trackEvent(MixpanelEvent.Slide_Delete_Slide_Button_Clicked, { pathname });
@@ -199,7 +199,7 @@ const SlideContent = ({ slide, index, presentationId }: SlideContentProps) => {
             <div className="absolute top-2 z-20 sm:top-4 hidden md:block left-2 sm:left-4 transition-transform">
               <Popover>
                 <PopoverTrigger>
-                  <ToolTip content="Update slide using prompt">
+                  <ToolTip content="Обновить слайд с помощью нейросети">
                     <div
                       className={`p-2 group-hover:scale-105 rounded-lg bg-[#5141e5] hover:shadow-md transition-all duration-300 cursor-pointer shadow-md `}
                     >
@@ -244,7 +244,7 @@ const SlideContent = ({ slide, index, presentationId }: SlideContentProps) => {
                           trackEvent(MixpanelEvent.Slide_Update_From_Prompt_Button_Clicked, { pathname });
                         }}
                       >
-                        {isUpdating ? "Updating..." : "Update"}
+                        {isUpdating ? "Обновление..." : "Обновить"}
                         <SendHorizontal className="w-4 sm:w-5 h-4 sm:h-5" />
                       </button>
                     </form>
@@ -259,7 +259,7 @@ const SlideContent = ({ slide, index, presentationId }: SlideContentProps) => {
               <Popover>
                 <PopoverTrigger asChild>
                   <div className=" cursor-pointer ">
-                    <ToolTip content="Show speaker notes">
+                    <ToolTip content="Показать заметки">
                       <StickyNote className="text-xl text-gray-500" />
                     </ToolTip>
                   </div>

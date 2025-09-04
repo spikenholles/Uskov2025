@@ -144,7 +144,7 @@ const UploadPage = () => {
   const handleDirectPresentationGeneration = async () => {
     setLoadingState({
       isLoading: true,
-      message: "Generating outlines...",
+      message: "Генерируем план...",
       showProgress: true,
       duration: 30,
     });
@@ -214,7 +214,7 @@ const UploadPage = () => {
         className="w-full rounded-[32px] flex items-center justify-center py-6 bg-[#5141e5] text-white font-instrument_sans font-semibold text-xl hover:bg-[#5141e5]/80 transition-colors duration-300"
         data-testid="next-button"
       >
-        <span>Next</span>
+        <span>Далее</span>
         <ChevronRight className="!w-6 !h-6" />
       </Button>
     </Wrapper>

@@ -162,7 +162,7 @@ const LayoutSelection: React.FC<LayoutSelectionProps> = ({
         <div className="space-y-8 mb-4">
             {/* In Built Templates */}
             <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">In Built Templates</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Встроенные шаблоны</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {inBuiltGroups.map((group) => (
                         <GroupLayouts
@@ -178,11 +178,11 @@ const LayoutSelection: React.FC<LayoutSelectionProps> = ({
             {/* Custom AI Templates */}
             <div>
                 <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-lg font-semibold text-gray-900">Custom AI Templates</h3>
+                    <h3 className="text-lg font-semibold text-gray-900">Пользовательские шаблоны</h3>
                 </div>
                 {customGroups.length === 0 ? (
                     <div className="text-sm text-gray-600 py-2">
-                        No custom templates. Create one from "Create Template" menu.
+                        Пусто. Вы можете создать новый шаблон из меню "Создать шаблон".
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

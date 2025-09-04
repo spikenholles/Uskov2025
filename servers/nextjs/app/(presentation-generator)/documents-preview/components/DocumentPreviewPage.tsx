@@ -137,7 +137,7 @@ const DocumentsPreviewPage: React.FC = () => {
   const handleCreatePresentation = async () => {
     try {
       setShowLoading({
-        message: "Generating presentation outline...",
+        message: "Генерация плана презентации...",
         show: true,
         duration: 40,
         progress: true,
@@ -267,7 +267,7 @@ const DocumentsPreviewPage: React.FC = () => {
       <div className="flex mt-6 gap-4 font-instrument_sans">
         {!isOpen && (
           <div className="fixed left-4 top-1/2 -translate-y-1/2 z-50">
-            <ToolTip content="Open Panel">
+            <ToolTip content="Открыть панель">
               <Button
                 onClick={() => setIsOpen(true)}
                 className="bg-[#5146E5] text-white p-3 shadow-lg"

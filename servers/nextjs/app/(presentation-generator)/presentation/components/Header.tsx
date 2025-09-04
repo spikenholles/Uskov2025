@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { BookOpen } from "lucide-react";
 import {
   SquareArrowOutUpRight,
   Play,
@@ -189,10 +190,10 @@ const Header = ({
       {/* undo redo */}
       <button onClick={handleReGenerate} disabled={isStreaming || !presentationData} className="text-white  disabled:opacity-50" >
       
-        Re-Generate
+        Генерировать заново
       </button>
       <div className="flex items-center gap-2 ">
-        <ToolTip content="Undo">
+        <ToolTip content="Шаг назад">
         <button disabled={!canUndo} className="text-white disabled:opacity-50" onClick={() => {
           onUndo();
         }}>
@@ -201,7 +202,7 @@ const Header = ({
           
         </button>
           </ToolTip>
-          <ToolTip content="Redo">
+          <ToolTip content="Шаг вперед">
 
         <button disabled={!canRedo} className="text-white disabled:opacity-50" onClick={() => {
           onRedo();
@@ -224,7 +225,7 @@ const Header = ({
         className="border border-white font-bold text-white rounded-[32px] transition-all duration-300 group"
       >
         <Play className="w-4 h-4 mr-1 stroke-white group-hover:stroke-black" />
-        Present
+        Слайд-шоу
       </Button>
 
       {/* Desktop Export Button with Popover */}
@@ -236,7 +237,7 @@ const Header = ({
           <PopoverTrigger asChild>
             <Button className={`border py-5 text-[#5146E5] font-bold rounded-[32px] transition-all duration-500 hover:border hover:bg-[#5146E5] hover:text-white w-full ${mobile ? "" : "bg-white"}`}>
               <SquareArrowOutUpRight className="w-4 h-4 mr-1" />
-              Export
+              Экспортировать
             </Button>
           </PopoverTrigger>
           <PopoverContent align="end" className="w-[250px] space-y-2 py-3 px-2 ">
@@ -253,47 +254,46 @@ const Header = ({
   );
 
   return (
-    <>
-      <OverlayLoader
-        show={showLoader}
-        text="Exporting presentation..."
-        showProgress={true}
-        duration={40}
-      />
-      <div
-
-        className="bg-[#5146E5] w-full shadow-lg sticky top-0 ">
-
-        <Announcement />
-        <Wrapper className="flex items-center justify-between py-1">
-          <Link href="/dashboard" className="min-w-[162px]">
-            <img
-              className="h-16"
-              src="/logo-white.png"
-              alt="Presentation logo"
-            />
-          </Link>
-
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-4 2xl:gap-6">
-            {isStreaming && (
-              <Loader2 className="animate-spin text-white font-bold w-6 h-6" />
-            )}
-
-
-            <MenuItems mobile={false} />
-            <HeaderNav />
+  <>
+    <OverlayLoader
+      show={showLoader}
+      text="Exporting presentation..."
+      showProgress={true}
+      duration={40}
+    />
+    <div className="border-b bg-background/80 backdrop-blur-sm sticky top-0 z-50">
+      <Announcement />
+      <Wrapper className="h-16 flex items-center justify-between">
+        <Link 
+          href="/dashboard" 
+          className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+        >
+          <div className="w-8 h-8 bg-primary rounded-md flex items-center justify-center">
+            <BookOpen className="w-5 h-5 text-white" />
           </div>
+          <span className="text-xl font-semibold font-inter">ООО "Стартапчик"</span>
+        </Link>
 
-          {/* Mobile Menu */}
-          <div className="lg:hidden flex items-center gap-4">
-            <HeaderNav />
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex items-center gap-3">
+          {isStreaming && (
+            <div className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-muted-foreground">
+              <Loader2 className="animate-spin w-4 h-4" />
+              <span>Загрузка...</span>
+            </div>
+          )}
 
-          </div>
-        </Wrapper>
+          <MenuItems mobile={false} />
+          <HeaderNav />
+        </div>
 
-      </div>
-    </>
+        {/* Mobile Menu */}
+        <div className="lg:hidden flex items-center gap-3">
+          <HeaderNav />
+        </div>
+      </Wrapper>
+    </div>
+  </>
   );
 };
 

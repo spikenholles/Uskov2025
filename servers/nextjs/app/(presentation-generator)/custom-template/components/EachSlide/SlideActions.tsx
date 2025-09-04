@@ -34,7 +34,7 @@ export const SlideActions: React.FC<SlideActionsProps> = ({
           {slide.processed && slide.html && !isEditMode && !isHtmlEditMode && (
             <>
               <div>
-                <ToolTip content="Edit slide with AI">
+                <ToolTip content="Редактировать слайд с AI">
                   <button
                     onClick={onEditClick}
                     disabled={isProcessing || !slide.processed}
@@ -50,7 +50,7 @@ export const SlideActions: React.FC<SlideActionsProps> = ({
                 </ToolTip>
               </div>
               <div>
-                <ToolTip content="Edit HTML directly">
+                <ToolTip content="Редактировать HTML напрямую">
                   <button
                     onClick={onHtmlEditClick}
                     disabled={isProcessing || !slide.processed}
@@ -68,7 +68,7 @@ export const SlideActions: React.FC<SlideActionsProps> = ({
             </>
           )}
           <div>
-            <ToolTip content="Re-Design this slide">
+            <ToolTip content="Изменить дизайн слайда">
               <button
                 onClick={onRetry}
                 disabled={isProcessing || !slide.processed}
@@ -84,7 +84,7 @@ export const SlideActions: React.FC<SlideActionsProps> = ({
             </ToolTip>
           </div>
           <div>
-            <ToolTip content="Delete Slide">
+            <ToolTip content="Удалить слайд">
               <button
                 disabled={isProcessing}
                 onClick={onDelete}
