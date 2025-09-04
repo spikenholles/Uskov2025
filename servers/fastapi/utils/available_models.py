@@ -17,5 +17,13 @@ async def list_available_anthropic_models(api_key: str) -> list[str]:
 
 
 async def list_available_google_models(api_key: str) -> list[str]:
-    client = genai.Client(api_key=api_key, timeout=20)
-    return list(map(lambda x: x.name, client.models.list(config={"page_size": 50})))
+    import asyncio
+    
+    def _sync_get_models():
+        client = genai.Client(api_key=api_key)
+        return list(map(lambda x: x.name, client.models.list(config={"page_size": 50}))) # костыль testing
+    
+    return await asyncio.wait_for(
+        asyncio.to_thread(_sync_get_models), 
+        timeout=20.0
+    )
