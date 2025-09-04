@@ -9,11 +9,11 @@ export function MixpanelInitializer({ children }: { children: React.ReactNode })
 
   // Initialize once
   useEffect(() => {
-    initMixpanel();
+    // initMixpanel();
   }, []);
 
   useEffect(() => {
-    trackEvent(MixpanelEvent.PageView, { url: pathname });
+    // trackEvent(MixpanelEvent.PageView, { url: pathname });
   }, [pathname]);
 
   return <>{children}</>;

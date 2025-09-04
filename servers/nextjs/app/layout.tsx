@@ -32,7 +32,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://presenton.ai"),
-  title: "Presenton - Open Source AI presentation generator",
+  title: "Стартапчик",
   description:
     "Open-source AI presentation generator with custom layouts, multi-model support (OpenAI, Gemini, Ollama), and PDF/PPTX export. A free Gamma alternative.",
   keywords: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     "professional slides",
   ],
   openGraph: {
-    title: "Presenton - Open Source AI presentation generator",
+    title: "ООО 'Стартапчик'",
     description:
       "Open-source AI presentation generator with custom layouts, multi-model support (OpenAI, Gemini, Ollama), and PDF/PPTX export. A free Gamma alternative.",
     url: "https://presenton.ai",
