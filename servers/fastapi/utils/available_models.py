@@ -1,6 +1,7 @@
 from anthropic import AsyncAnthropic
 from openai import AsyncOpenAI
 from google import genai
+from google.genai.types import HttpOptions
 
 
 async def list_available_openai_compatible_models(url: str, api_key: str) -> list[str]:
@@ -17,13 +18,15 @@ async def list_available_anthropic_models(api_key: str) -> list[str]:
 
 
 async def list_available_google_models(api_key: str) -> list[str]:
-    import asyncio
-    
-    def _sync_get_models():
-        client = genai.Client(api_key=api_key)
-        return list(map(lambda x: x.name, client.models.list(config={"page_size": 50}))) # костыль testing
-    
-    return await asyncio.wait_for(
-        asyncio.to_thread(_sync_get_models), 
-        timeout=20.0
-    )
+   
+   http_options = HttpOptions()
+   http_options.client_args = {
+       "proxy": "http://nVGQ2J:AYreSF@200.71.126.190:9004"
+   }
+   
+   client = genai.Client(
+       api_key=api_key, 
+       http_options=http_options
+   )
+   
+   return list(map(lambda x: x.name, client.models.list(config={"page_size": 50})))
