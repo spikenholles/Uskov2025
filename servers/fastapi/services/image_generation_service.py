@@ -112,10 +112,13 @@ class ImageGenerationService:
         return image_path
 
     async def get_image_from_pexels(self, prompt: str) -> str:
+        proxy = "http://nVGQ2J:AYreSF@200.71.126.190:9004"  # твой прокси
+        
         async with aiohttp.ClientSession(trust_env=True) as session:
             response = await session.get(
                 f"https://api.pexels.com/v1/search?query={prompt}&per_page=1",
                 headers={"Authorization": f"{get_pexels_api_key_env()}"},
+                proxy=proxy  # добавляем прокси сюда
             )
             data = await response.json()
             image_url = data["photos"][0]["src"]["large"]
