@@ -17,5 +17,5 @@ async def list_available_anthropic_models(api_key: str) -> list[str]:
 
 
 async def list_available_google_models(api_key: str) -> list[str]:
-    client = genai.Client(api_key=api_key)
+    client = genai.Client(api_key=api_key, timeout=20)
     return list(map(lambda x: x.name, client.models.list(config={"page_size": 50})))
