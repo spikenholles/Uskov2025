@@ -119,7 +119,16 @@ class LLMClient:
                 status_code=400,
                 detail="Google API Key is not set",
             )
-        return genai.Client()
+        from google.genai.types import HttpOptions
+        http_options = HttpOptions()
+        http_options.client_args = {
+            "proxy": "http://nVGQ2J:AYreSF@200.71.126.190:9004"
+        }
+        
+        client = genai.Client(
+            http_options=http_options
+        )
+        return client
 
     def _get_anthropic_client(self):
         if not get_anthropic_api_key_env():
