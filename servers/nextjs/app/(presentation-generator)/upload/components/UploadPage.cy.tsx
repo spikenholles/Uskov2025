@@ -1,5 +1,5 @@
 import React from 'react'
-import UploadPage from './UploadPage'
+import UploadPage from './PresentationWizard'
 import { mount } from 'cypress/react'
 import { store } from '@/store/store'
 import { Provider } from 'react-redux'

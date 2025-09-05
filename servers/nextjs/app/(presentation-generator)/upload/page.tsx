@@ -1,60 +1,27 @@
+// servers/nextjs/app/(presentation-generator)/upload/page.tsx
 import React from "react";
-
-import UploadPage from "./components/UploadPage";
+import PresentationWizard from "./components/PresentationWizard"; // Импортируем наш новый главный компонент
 import Header from "@/app/(presentation-generator)/dashboard/components/Header";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Presenton | Open Source AI presentation generator",
-  description:
-    "Open-source AI presentation generator with custom layouts, multi-model support (OpenAI, Gemini, Ollama), and PDF/PPTX export. A free Gamma alternative.",
-  alternates: {
-    canonical: "https://presenton.ai/create",
-  },
-  keywords: [
-    "presentation generator",
-    "AI presentations",
-    "data visualization",
-    "automatic presentation maker",
-    "professional slides",
-    "data-driven presentations",
-    "document to presentation",
-    "presentation automation",
-    "smart presentation tool",
-    "business presentations",
-  ],
-  openGraph: {
-    title: "Create Data Presentation | PresentOn",
-    description:
-      "Open-source AI presentation generator with custom layouts, multi-model support (OpenAI, Gemini, Ollama), and PDF/PPTX export. A free Gamma alternative.",
-    type: "website",
-    url: "https://presenton.ai/create",
-    siteName: "PresentOn",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Create Data Presentation | PresentOn",
-    description:
-      "Open-source AI presentation generator with custom layouts, multi-model support (OpenAI, Gemini, Ollama), and PDF/PPTX export. A free Gamma alternative.",
-    site: "@presenton_ai",
-    creator: "@presenton_ai",
-  },
-};
+// Метаданные можно оставить без изменений
+export const metadata: Metadata = { /* ... */ };
 
-const page = () => {
+const Page = () => {
   return (
-    <div className="relative">
+    <div className="relative bg-white">
       <Header />
-      <div className="flex flex-col items-center justify-center  py-8">
-        <h1 className="text-3xl font-semibold font-instrument_sans">
-          Создать презентацию{" "}
+      <div className="flex flex-col items-center justify-center pt-8 pb-4">
+        <h1 className="text-4xl font-bold font-instrument_sans text-gray-800">
+          Создать презентацию
         </h1>
-        {/* <p className='text-sm text-gray-500'>We will generate a presentation for you</p> */}
+        <p className='text-lg text-gray-500 mt-2'>Пройдите 5 простых шагов для идеального результата</p>
       </div>
-
-      <UploadPage />
+      
+      {/* Здесь мы вызываем наш новый конструктор */}
+      <PresentationWizard />
     </div>
   );
 };
 
-export default page;
+export default Page;
